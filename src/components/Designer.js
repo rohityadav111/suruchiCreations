@@ -9,12 +9,10 @@ import img7 from '../images/IMG-20220221-WA0061-300x300.jpg'
 import img8 from '../images/IMG-20220302-WA0012-300x300.jpg'
 import Slider from "react-slick";
 import { Link } from 'react-router-dom'
-import useState from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart,faHeart, faEye,faStar} from '@fortawesome/free-solid-svg-icons';
 
 const Designer = () => {
-    
 
     var settings = {
         dots: true,
@@ -110,239 +108,239 @@ const Designer = () => {
 
     return (
         <>
-            <section class="design-choice py-5">
-                <div class="container">
-                    <div class="section-title text-center mb-3">
+            <section className="design-choice py-5">
+                <div className="container">
+                    <div className="section-title text-center mb-3">
                         <h3>Designer Choice</h3>
                         <img src={img1} />
                     </div>
                     
                        <Slider {...settings}>
 
-                            <div class="item m-2">
-                                <div class="img-hover-zoom">
+                            <div className="item m-2">
+                                <div className="img-hover-zoom">
                                     <img src=
-                                    {img2} alt="" title="" class="w-100"/>
+                                    {img2} alt="" title="" className="w-100"/>
                                 </div>
 
-                                <div class="for-content-side">
-                                    <a href="#" class="text-dark font-weight-bold">Oversize Cotton Dress</a>
-                                    <div class="product__items--price">
-                                        <span class="current__price">₹110</span>
-                                        <span class="price__divided"></span>
-                                        <span class="old__price">₹78</span>
+                                <div className="for-content-side">
+                                    <a href="#" className="text-dark font-weight-bold">Oversize Cotton Dress</a>
+                                    <div className="product__items--price">
+                                        <span className="current__price">₹110</span>
+                                        <span className="price__divided"></span>
+                                        <span className="old__price">₹78</span>
                                     </div>
-                                    <div class="review-star">
+                                    <div className="review-star">
                                         <ul>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
                                         </ul>
                                     </div>
 
-                                    <div class="adding-cart mt-3">
-                                        <ul class="text-left">
-                                            <li class="list-inline-item"><Link to="/cart"> <FontAwesomeIcon icon={faShoppingCart}/> + Add to Cart </Link> </li>
-                                            <li class="list-inline-item"><a href="#"><FontAwesomeIcon icon={faHeart}/></a></li>
-                                            <li class="list-inline-item"><a href="#"><FontAwesomeIcon icon={faEye}/></a></li>
+                                    <div className="adding-cart mt-3">
+                                        <ul className="text-left">
+                                            <li className="list-inline-item"><Link to="/cart"> <FontAwesomeIcon icon={faShoppingCart}/> + Add to Cart </Link> </li>
+                                            <li className="list-inline-item"><a href="#"><FontAwesomeIcon icon={faHeart}/></a></li>
+                                            <li className="list-inline-item"><a href="#"><FontAwesomeIcon icon={faEye}/></a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
 
 
-                            <div class="item m-2">
-                                <div class="img-hover-zoom">
-                                    <img src={img3} alt="" title="" class="w-100"/>
+                            <div className="item m-2">
+                                <div className="img-hover-zoom">
+                                    <img src={img3} alt="" title="" className="w-100"/>
                                 </div>
 
-                                <div class="for-content-side">
-                                    <a href="#" class="text-dark font-weight-bold">Oversize Cotton Dress</a>
-                                    <div class="product__items--price">
-                                        <span class="current__price">₹110</span>
-                                        <span class="price__divided"></span>
-                                        <span class="old__price">₹78</span>
+                                <div className="for-content-side">
+                                    <a href="#" className="text-dark font-weight-bold">Oversize Cotton Dress</a>
+                                    <div className="product__items--price">
+                                        <span className="current__price">₹110</span>
+                                        <span className="price__divided"></span>
+                                        <span className="old__price">₹78</span>
                                     </div>
-                                    <div class="review-star">
+                                    <div className="review-star">
                                         <ul>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
                                         </ul>
                                     </div>
 
-                                    <div class="adding-cart mt-3">
-                                        <ul class="text-left">
-                                            <li class="list-inline-item"><Link to="/cart"><FontAwesomeIcon icon={faShoppingCart}/> + Add to Cart </Link> </li>
-                                            <li class="list-inline-item"><a href="#"><FontAwesomeIcon icon={faHeart}/></a></li>
-                                            <li class="list-inline-item"><a href="#"><FontAwesomeIcon icon={faEye}/></a></li>
+                                    <div className="adding-cart mt-3">
+                                        <ul className="text-left">
+                                            <li className="list-inline-item"><Link to="/cart"><FontAwesomeIcon icon={faShoppingCart}/> + Add to Cart </Link> </li>
+                                            <li className="list-inline-item"><a href="#"><FontAwesomeIcon icon={faHeart}/></a></li>
+                                            <li className="list-inline-item"><a href="#"><FontAwesomeIcon icon={faEye}/></a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="item m-2">
-                                <div class="img-hover-zoom">
-                                    <img src={img4} alt="" title="" class="w-100"/>
+                            <div className="item m-2">
+                                <div className="img-hover-zoom">
+                                    <img src={img4} alt="" title="" className="w-100"/>
                                 </div>
 
-                                <div class="for-content-side">
-                                    <a href="#" class="text-dark font-weight-bold">Oversize Cotton Dress</a>
-                                    <div class="product__items--price">
-                                        <span class="current__price">₹110</span>
-                                        <span class="price__divided"></span>
-                                        <span class="old__price">₹78</span>
+                                <div className="for-content-side">
+                                    <a href="#" className="text-dark font-weight-bold">Oversize Cotton Dress</a>
+                                    <div className="product__items--price">
+                                        <span className="current__price">₹110</span>
+                                        <span className="price__divided"></span>
+                                        <span className="old__price">₹78</span>
                                     </div>
-                                    <div class="review-star">
+                                    <div className="review-star">
                                         <ul>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
                                         </ul>
                                     </div>
 
-                                    <div class="adding-cart mt-3">
-                                        <ul class="text-left">
-                                            <li class="list-inline-item"><Link to="/cart"><FontAwesomeIcon icon={faShoppingCart}/> + Add to Cart </Link> </li>
-                                            <li class="list-inline-item"><a href="#"><FontAwesomeIcon icon={faHeart}/></a></li>
-                                            <li class="list-inline-item"><a href="#"><FontAwesomeIcon icon={faEye}/></a></li>
+                                    <div className="adding-cart mt-3">
+                                        <ul className="text-left">
+                                            <li className="list-inline-item"><Link to="/cart"><FontAwesomeIcon icon={faShoppingCart}/> + Add to Cart </Link> </li>
+                                            <li className="list-inline-item"><a href="#"><FontAwesomeIcon icon={faHeart}/></a></li>
+                                            <li className="list-inline-item"><a href="#"><FontAwesomeIcon icon={faEye}/></a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="item m-2">
-                                <div class="img-hover-zoom">
-                                    <img src={img5} alt="" title="" class="w-100"/>
+                            <div className="item m-2">
+                                <div className="img-hover-zoom">
+                                    <img src={img5} alt="" title="" className="w-100"/>
                                 </div>
 
-                                <div class="for-content-side">
-                                    <a href="#" class="text-dark font-weight-bold">Oversize Cotton Dress</a>
-                                    <div class="product__items--price">
-                                        <span class="current__price">₹110</span>
-                                        <span class="price__divided"></span>
-                                        <span class="old__price">₹78</span>
+                                <div className="for-content-side">
+                                    <a href="#" className="text-dark font-weight-bold">Oversize Cotton Dress</a>
+                                    <div className="product__items--price">
+                                        <span className="current__price">₹110</span>
+                                        <span className="price__divided"></span>
+                                        <span className="old__price">₹78</span>
                                     </div>
-                                    <div class="review-star">
+                                    <div className="review-star">
                                         <ul>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
                                         </ul>
                                     </div>
 
-                                    <div class="adding-cart mt-3">
-                                        <ul class="text-left">
-                                            <li class="list-inline-item"><Link to="/cart"><FontAwesomeIcon icon={faShoppingCart}/> + Add to Cart </Link> </li>
-                                            <li class="list-inline-item"><a href="#"><FontAwesomeIcon icon={faHeart}/></a></li>
-                                            <li class="list-inline-item"><a href="#"><FontAwesomeIcon icon={faEye}/></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="item m-2">
-                                <div class="img-hover-zoom">
-                                    <img src={img6} alt="" title="" class="w-100"/>
-                                </div>
-
-                                <div class="for-content-side">
-                                    <a href="#" class="text-dark font-weight-bold">Oversize Cotton Dress</a>
-                                    <div class="product__items--price">
-                                        <span class="current__price">₹110</span>
-                                        <span class="price__divided"></span>
-                                        <span class="old__price">₹78</span>
-                                    </div>
-                                    <div class="review-star">
-                                        <ul>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="adding-cart mt-3">
-                                        <ul class="text-left">
-                                            <li class="list-inline-item"><Link to="/cart"><FontAwesomeIcon icon={faShoppingCart}/> + Add to Cart </Link> </li>
-                                            <li class="list-inline-item"><a href="#"><FontAwesomeIcon icon={faHeart}/></a></li>
-                                            <li class="list-inline-item"><a href="#"><FontAwesomeIcon icon={faEye}/></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item m-2">
-                                <div class="img-hover-zoom">
-                                    <img src={img7} alt="" title="" class="w-100"/>
-                                </div>
-
-                                <div class="for-content-side">
-
-                                    <a href="#" class="text-dark font-weight-bold">Oversize Cotton Dress</a>
-                                    <div class="product__items--price">
-                                        <span class="current__price">₹110</span>
-                                        <span class="price__divided"></span>
-                                        <span class="old__price">₹78</span>
-                                    </div>
-                                    <div class="review-star">
-                                        <ul>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="adding-cart mt-3">
-                                        <ul class="text-left">
-                                            <li class="list-inline-item"><Link to="/cart"><FontAwesomeIcon icon={faShoppingCart}/> + Add to Cart </Link> </li>
-                                            <li class="list-inline-item"><a href="#"><FontAwesomeIcon icon={faHeart}/></a></li>
-                                            <li class="list-inline-item"><a href="#"><FontAwesomeIcon icon={faEye}/></a></li>
+                                    <div className="adding-cart mt-3">
+                                        <ul className="text-left">
+                                            <li className="list-inline-item"><Link to="/cart"><FontAwesomeIcon icon={faShoppingCart}/> + Add to Cart </Link> </li>
+                                            <li className="list-inline-item"><a href="#"><FontAwesomeIcon icon={faHeart}/></a></li>
+                                            <li className="list-inline-item"><a href="#"><FontAwesomeIcon icon={faEye}/></a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
 
 
-                            <div class="item m-2">
-                                <div class="img-hover-zoom">
-                                    <img src={img8} alt="" title="" class="w-100"/>
+                            <div className="item m-2">
+                                <div className="img-hover-zoom">
+                                    <img src={img6} alt="" title="" className="w-100"/>
                                 </div>
 
-                                <div class="for-content-side">
-                                    <a href="#" class="text-dark font-weight-bold">Oversize Cotton Dress</a>
-                                    <div class="product__items--price">
-                                        <span class="current__price">₹110</span>
-                                        <span class="price__divided"></span>
-                                        <span class="old__price">₹78</span>
+                                <div className="for-content-side">
+                                    <a href="#" className="text-dark font-weight-bold">Oversize Cotton Dress</a>
+                                    <div className="product__items--price">
+                                        <span className="current__price">₹110</span>
+                                        <span className="price__divided"></span>
+                                        <span className="old__price">₹78</span>
                                     </div>
-                                    <div class="review-star">
+                                    <div className="review-star">
                                         <ul>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
-                                            <li class="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
                                         </ul>
                                     </div>
 
-                                    <div class="adding-cart mt-3">
-                                        <ul class="text-left">
-                                            <li class="list-inline-item"><Link to="/cart"><FontAwesomeIcon icon={faShoppingCart}/> + Add to Cart </Link> </li>
-                                            <li class="list-inline-item"><a href="#"><FontAwesomeIcon icon={faHeart}/></a></li>
-                                            <li class="list-inline-item"><a href="#"><FontAwesomeIcon icon={faEye}/></a></li>
+                                    <div className="adding-cart mt-3">
+                                        <ul className="text-left">
+                                            <li className="list-inline-item"><Link to="/cart"><FontAwesomeIcon icon={faShoppingCart}/> + Add to Cart </Link> </li>
+                                            <li className="list-inline-item"><a href="#"><FontAwesomeIcon icon={faHeart}/></a></li>
+                                            <li className="list-inline-item"><a href="#"><FontAwesomeIcon icon={faEye}/></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="item m-2">
+                                <div className="img-hover-zoom">
+                                    <img src={img7} alt="" title="" className="w-100"/>
+                                </div>
+
+                                <div className="for-content-side">
+
+                                    <a href="#" className="text-dark font-weight-bold">Oversize Cotton Dress</a>
+                                    <div className="product__items--price">
+                                        <span className="current__price">₹110</span>
+                                        <span className="price__divided"></span>
+                                        <span className="old__price">₹78</span>
+                                    </div>
+                                    <div className="review-star">
+                                        <ul>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="adding-cart mt-3">
+                                        <ul className="text-left">
+                                            <li className="list-inline-item"><Link to="/cart"><FontAwesomeIcon icon={faShoppingCart}/> + Add to Cart </Link> </li>
+                                            <li className="list-inline-item"><a href="#"><FontAwesomeIcon icon={faHeart}/></a></li>
+                                            <li className="list-inline-item"><a href="#"><FontAwesomeIcon icon={faEye}/></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div className="item m-2">
+                                <div className="img-hover-zoom">
+                                    <img src={img8} alt="" title="" className="w-100"/>
+                                </div>
+
+                                <div className="for-content-side">
+                                    <a href="#" className="text-dark font-weight-bold">Oversize Cotton Dress</a>
+                                    <div className="product__items--price">
+                                        <span className="current__price">₹110</span>
+                                        <span className="price__divided"></span>
+                                        <span className="old__price">₹78</span>
+                                    </div>
+                                    <div className="review-star">
+                                        <ul>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                            <li className="list-inline-item mr-0"><FontAwesomeIcon icon={faStar}/></li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="adding-cart mt-3">
+                                        <ul className="text-left">
+                                            <li className="list-inline-item"><Link to="/cart"><FontAwesomeIcon icon={faShoppingCart}/> + Add to Cart </Link> </li>
+                                            <li className="list-inline-item"><a href="#"><FontAwesomeIcon icon={faHeart}/></a></li>
+                                            <li className="list-inline-item"><a href="#"><FontAwesomeIcon icon={faEye}/></a></li>
                                         </ul>
                                     </div>
                                 </div>

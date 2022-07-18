@@ -1,0 +1,61 @@
+.top-bar {
+    background: #2f323e;
+    width: 100%;
+    padding: 0px 100px;
+    position: fixed;
+    z-index: 999;
+}
+
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.spensit :hover{
+ cursor: pointer;  
+
+}
+.nav>ul>li>a {
+    padding: 10px 12px;
+}
+
+nav>ul>li>a {
+    position: relative;
+    display: block;
+    font-size: 14px !important;
+    text-transform: uppercase;
+    color: #fff
+
+}
+
+.navlink {
+    list-style: none;
+}
+
+.links {
+    list-style: none;
+}
+
+nav>ul>li>a.active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #ce004d;
+    font-weight: 500;
+    list-style: none;
+}
+
+nav>ul>li>a:hover{
+    background-color: #ce004d;
+    color: #fff;
+    list-style: none;
+}

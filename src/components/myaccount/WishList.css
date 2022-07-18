@@ -1,0 +1,50 @@
+.your-wishlist {
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.styu h6 a {
+    color: #302b2b;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.product__items--price {
+    margin-bottom: 0.5rem;
+}
+.current__price {
+    color: #000000;
+    font-size: 20px !important;
+    font-weight: 500;
+}
+.price__divided {
+    width: 1.2rem;
+    height: 0.1rem;
+    background: var(--text-gray-color);
+    vertical-align: middle;
+    margin: 0 0.3rem;
+}
+span.old__price {
+    font-size: 18px !important;
+    color: #ce155a;
+}
+.stock-status.in-stock {
+    background: #565354;
+    color: #000;
+    font-size: 13px;
+    padding: 7px 15px;
+}
+.styu img {
+    max-width: 100%;
+}
+
+a.font-size-wishlist {
+    font-size: 14px;
+    padding: 10px;
+}
+.your-wishlist {
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin-bottom: 15px;
+}

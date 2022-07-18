@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome} from '@fortawesome/free-solid-svg-icons';
 import SocialTags from './SocialTags';
 import { Link } from 'react-router-dom';
+import Header from '../Header';
+import Footer from '../Footer';
 const PageNotFound = () => {
     return (
         <>
@@ -54,6 +56,7 @@ const PageNotFound = () => {
                 </div>
             </section>
             <SocialTags/>
+          
         </>
     )
 }

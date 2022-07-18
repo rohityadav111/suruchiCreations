@@ -6,9 +6,9 @@ import { faFacebook, faInstagram, faYoutube, faVimeo, faPinterest, faTwitter, } 
 const SocialTags = () => {
   return (
  <>
-  <section class="footer-social-section bg-secondry">
-                <div class="container">
-                    <div class="footer-social-content">
+  <section className="footer-social-section bg-secondry">
+                <div className="container">
+                    <div className="footer-social-content">
                         <ul>
                             <li><a href="#"><FontAwesomeIcon className="text-white" icon={faFacebook} /></a></li>
                             <li><a href="#"><FontAwesomeIcon className="text-white" icon={faTwitter} /></a></li>

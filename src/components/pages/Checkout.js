@@ -4,18 +4,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import Header from '../Header';
+import Footer from '../Footer';
 
 
 const Checkout = () => {
-    const [cart, setCart] = useState([])
+  
 
     const [name, setName] = useState("")
     const [add_type, setType] = useState("")
     const [phone, setPhone] = useState("")
     const [address, setAddress] = useState("")
-    const [input, setInput] = useState("")
 
-    console.log(input)
+
 
     var totalprice = 0;
     useEffect(() => {
@@ -23,23 +25,9 @@ const Checkout = () => {
         Address();
     }, []);
 
-    const userId = JSON.parse(localStorage.getItem("user"))._id
+   
 
-    const ShowCart = async () => {
-        let result = await fetch(`https://web-click-api.herokuapp.com/cart/${userId}`, {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${JSON.parse(localStorage.getItem("Token"))}`,
-            }
-        });
-        result = await result.json();
-
-        setCart(result.cartList)
-
-
-    }
-
-    const CheckoutHandle = async (e) => {
+    const addAddress = async (e) => {
         e.preventDefault();
 
 
@@ -60,16 +48,25 @@ const Checkout = () => {
             body: formData
 
         }).then((result) => result.json())
-        console.log(result)
 
+       console.log(result)
         if (result.success) {
-
+            toast.success(result.message, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
+               Address()
         } else {
 
         }
     }
 
-
+    const [selectAddress, setSelectAddress] = useState([])
     const [getAddress, setGetAddress] = useState([])
 
     const Address = async () => {
@@ -80,14 +77,93 @@ const Checkout = () => {
             }
         });
         result = await result.json();
-        console.log(result)
+
         setGetAddress(result.shippingAddressList)
 
 
     }
 
+
+    //--------------------------------order -------------------------------------------------------------------------///
+
+    const selectedAddress = (adr) => {
+        setSelectAddress(adr)
+    }
+        console.log(selectAddress)
+
+  
+    const data = {
+        userId: userId,
+        shippingAddressId: selectAddress,
+        grossTotal: totalprice
+    }
+
+    const PlaceOrder = async (e) => {
+        e.preventDefault();
+
+        let response = await fetch("https://web-click-api.herokuapp.com/order", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': "application/json",
+                Authorization: `Bearer ${JSON.parse(localStorage.getItem("Token"))}`
+            },
+            body: JSON.stringify(data)
+        })
+        response = await response.json()
+        console.log(response)
+
+        if (response.success) {
+            toast.success(response.message, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
+          
+
+        }
+        else {
+            
+        }
+    }
+
+    const DeleteAddress =async(id)=>{
+        let result = await fetch(`https://web-click-api.herokuapp.com/shipaddress/${id}`,{
+            method:'DELETE',
+            headers:{
+                Authorization: `Bearer ${JSON.parse(localStorage.getItem("Token"))}`
+            }
+        })
+
+        result = await result.json()
+        console.log(result)
+        if(result.success){
+            toast.success(result.message, {
+                position: "top-center",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
+
+        }
+
+    }
+
+    const EditAddress =async(id)=>{
+
+    }
+//--------------------------close-----------------------------------------------------------//
+
     return (
         <>
+
             <section className="breadcumb py-5">
                 <div className="container">
                     <div className="row">
@@ -121,22 +197,7 @@ const Checkout = () => {
                                 <div className="col-md-6 left-content align-self-center p-0">
                                     <span>Contact information</span>
                                 </div>
-
-                                <div className="col-md-6 login-left align-self-center text-right">
-                                    <span>Already have an account? <Link to='/login'> Log in </Link></span>
-                                </div>
-
-
-                                <div className="check-input">
-                                    <input type="" name="" placeholder="Email or mobile phone mumber" className="w-100 pl-2" />
-                                </div>
-                                <div className="check-box mt-3">
-                                    <ul>
-                                        <li className="list-inline-item mr-0">  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" /></li>
-                                        <li className="list-inline-item">Email me with news and offers</li>
-                                    </ul>
-                                </div>
-
+                         {/*
                                 <div className="check-box mt-3">
                                     <ul className="ml-3">
 
@@ -145,27 +206,33 @@ const Checkout = () => {
                                             getAddress && getAddress.map((element) => {
                                                 return (
                                                     <>
-                                                        <li className="list-inline-item mr-1">
-                                                            <input type="radio"  name='shippingAddress'
-                                                                    value={input} onChange={(e)=>setInput(e.target.value)}   />
-                                                                    
-                                                        </li>
-                                                        <li className='list-inline-item mr-1'>{element.name}</li>
-                                                        <li className='list-inline-item mr-1'>{element.phone}</li>
-                                                        <li className='list-inline-item mr-1'>{element.address}</li>
-                                                       
-                                                        
-                                                        
-                                                        <br/>
-                                                       
-                                                       
+                                                        <div>
+                                                            <li className="list-inline-item mr-1">
+                                                                <input type="radio" name='shippingAddress'
+                                                                    onClick={() => selectedAddress(element._id)} />
+
+                                                            </li>
+
+
+                                                            <li className='list-inline-item mr-1'>{element.name}</li>
+                                                            <li className='list-inline-item mr-1'>{element.phone}</li>
+                                                            <li className='list-inline-item mr-1'>{element.address}</li>
+                                                            <br />
+
+
+                                                        </div>
+                                                        <button className='btn btn-sm'onClick={()=> EditAddress(element._id)}>Edit</button>
+                                                        <button className='btn btn-sm'onClick={()=> DeleteAddress(element._id)}>Delete</button>
+
                                                     </>
                                                 )
                                             })
                                         }
 
                                     </ul>
+
                                 </div>
+                               
 
                                 <div className="row mt-4">
                                     <div className="col-12 shipping_cart">
@@ -173,13 +240,9 @@ const Checkout = () => {
                                         <span>Shipping address</span>
 
                                         <div className="row">
-                                            <form onSubmit={CheckoutHandle}>
+                                            <form onSubmit={addAddress}>
                                                 <div className="col-md-6 input-left">
-                                                    <input type="text" name="name" value={name} onChange={e => setName(e.target.value)} placeholder="First name (optional)" required="" className="w-100" />
-                                                </div>
-
-                                                <div className="col-md-6 input-left">
-                                                    <input type="" name="" placeholder="Last name" required="" className="w-100" />
+                                                    <input type="text" name="name" value={name} onChange={e => setName(e.target.value)} placeholder="Name" required="" className="w-100" />
                                                 </div>
 
                                                 <div className="col-md-12 input-left">
@@ -196,7 +259,7 @@ const Checkout = () => {
 
                                                 <div className="col-md-12 input-left mt-3">
                                                     <ul>
-                                                        <li className="list-inline-item"><button type='submit'>Save Address</button></li>
+                                                        <li className="list-inline-item"><button type='submit'> Add New Address</button></li>
 
                                                     </ul>
 
@@ -205,13 +268,13 @@ const Checkout = () => {
 
                                             <div className="col-md-12 input-left mt-3">
                                                 <ul><Link to="/">
-                                                    <li className="list-inline-item"><button>  Continue To Shipping </button></li>
+                                                    <li className="list-inline-item"><button onClick={PlaceOrder}>  Place Order </button></li>
                                                 </Link>
                                                     <Link to="/cart">
                                                         <li className="list-inline-item"><a href="#">Return to cart</a></li>
                                                     </Link>
                                                 </ul>
-
+                                                <ToastContainer/>
                                             </div>
 
                                         </div>
@@ -219,7 +282,7 @@ const Checkout = () => {
                                     </div>
                                 </div>
 
-
+                                    */}
                             </div>
                         </div>
                         <div className="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 check-gift-cart-line"></div>
@@ -227,13 +290,14 @@ const Checkout = () => {
 
                             {
                                 cart && cart.map((item) => {
+                               
                                     totalprice += item.product.price * item.quantity;
                                     return (
                                         <>
                                             <div className="row border-bottom pb-3 mb-3">
                                                 <div className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 media-type">
                                                     <div className="media">
-                                                        <img className="rounded" src={'http://3.110.3.217/filestorage/' + item.product.image.replace("uploads/images/", "")} alt="" title="" />
+                                                        <img className="rounded" src={'https://web-click-api.herokuapp.com/filestorage/' + item.product.image} alt="productimage" title="" />
                                                         <div className="cart-up">
                                                             <p className="text-white">{item.quantity}</p>
                                                         </div>
@@ -295,6 +359,7 @@ const Checkout = () => {
                     </div>
                 </div>
             </section>
+           
         </>
     )
 }

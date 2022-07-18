@@ -1,23 +1,27 @@
 import React, { useState } from 'react'
-
+import { ToastContainer, toast } from 'react-toastify';
 import SocialTags from '../pages/SocialTags'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router';
+
 
 
 const ForgetPassword = () => {
 
+    let navigate = useNavigate()
     const [email, setEmail] = useState("");
     const [show, setShow] = useState(true);
+    const [loading, setLoading] = useState(true)
 
     const [otp,setOtp] = useState("");
-    const [newemail,setNewEmail] = useState("");
+  
     const [new_password,setPassword] = useState("");
     const [confirm_password, setConfirmPassword] = useState("");
  
     let data = { email }
     const sendEmail = async (e) => {
         e.preventDefault()
-        let result = await fetch("http://3.110.3.217/users/forgetpassword", {
+        let result = await fetch("https://web-click-api.herokuapp.com/users/forgetpassword", {
             method: "POST",
 
             mode: 'cors',
@@ -33,12 +37,25 @@ const ForgetPassword = () => {
         console.log(result)
 
         if (result.success) {
+            toast.success(result.message, {
+                position: "top-center",
+                autoClose: 1000,
+             
+                })
             setShow(false)
+            setLoading(false)
+        }else{
+            toast.error(result.message, {
+                position: "top-center",
+                autoClose: 1000,
+               
+                })
+
         }
 
     }
 
-    let value = {otp, newemail,new_password,confirm_password}
+    let value = {otp, email,new_password,confirm_password}
 
     const resetPassword =async(e)=>{
         console.log(value)
@@ -55,7 +72,22 @@ const ForgetPassword = () => {
           body: JSON.stringify(value)
         })
         result = await result.json()
+        console.log(result)
+     if(result.success){
+        toast.success(result.message, {
+            position: "top-center",
+            autoClose: 1000,
+       
+            })
+            navigate("/login")
+     }else{
+        toast.error(result.message, {
+            position: "top-center",
+            autoClose: 1000,
+           
+            })
 
+     }
     }
     return (
         <>
@@ -74,6 +106,7 @@ const ForgetPassword = () => {
                     </ul>
                 </div>
             </section>
+            
 
             {
                 show ?
@@ -119,7 +152,7 @@ const ForgetPassword = () => {
                                         <li>Register with us for a faster checkout,</li>
                                         <li>to track the status of your order and more.</li>
 
-                                        <li><Link to="/register" className="create_an">Create An Account</Link></li>
+                                        <li><Link to="/suruchi-creations/register" className="create_an">Create An Account</Link></li>
                                     </ul>
 
                                 </div>
@@ -141,7 +174,7 @@ const ForgetPassword = () => {
                                             </div>
 
                                             <div className="col-md-6 create_filed">
-                                                <input type="email" name="email" placeholder="Your Email Address *" required="" className="w-100 border-0 mb-3" value={newemail} onChange={e=> setNewEmail(e.target.value)} />
+                                                <input type="email" name="email" placeholder="Your Email Address *" required="" className="w-100 border-0 mb-3" value={email} onChange={e=> setEmail(e.target.value)} />
                                             </div>
 
                                             <div className="col-md-6 create_filed">
@@ -160,11 +193,13 @@ const ForgetPassword = () => {
                                 </div>
                             </div>
                         </div>
+                        <ToastContainer/>
                     </section>
 
 
             }
             <SocialTags />
+        
         </>
     )
 }

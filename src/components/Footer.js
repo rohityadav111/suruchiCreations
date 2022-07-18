@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import paypal from '../images/paypal.jpg'
 import visa from '../images/visa.jpg'
@@ -15,21 +15,51 @@ import img from '../images/icon-1.png'
 import img2 from '../images/icon-3.png'
 import img3 from '../images/icon-2.png'
 import img4 from '../images/icon-4.png'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 
 
 const Footer = () => {
+    const [showButton, setShowButton] = useState(false);
+    useEffect(() => {
+        GetCategoryList()
+    })
 
-    const topScroll =()=>{
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 250) {
+                setShowButton(true);
+            } else {
+                setShowButton(false);
+            }
+        });
+    }, []);
+
+    const topScroll = () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth',
         });
     }
+    const [category, setCategory] = useState([])
+    const GetCategoryList = async () => {
+        let response = await fetch("https://web-click-api.herokuapp.com/category", {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${JSON.parse(localStorage.getItem("Token"))}`
+            }
+        })
+        response = await response.json()
+        setCategory(response.categorytList)
+
+        if (response.success) {
+
+        }
+
+    }
     return (
         <>
-       
+
             <section className="paytem-method bg-light py-3">
                 <div className="container">
                     <div className="row">
@@ -131,24 +161,31 @@ const Footer = () => {
                                     <span className="font-weight-bold mb-2 d-block">Quick Links</span>
                                     <ul>
                                         <li><a href="#" className=""><FontAwesomeIcon icon={faAngleRight} /> Company Profile</a></li>
-                                        <li><Link to="/our-products" className=""><FontAwesomeIcon icon={faAngleRight} /> Our Products</Link></li>
+                                        <li><Link to="/suruchi-creations/products/categories" className=""><FontAwesomeIcon icon={faAngleRight} /> Our Products</Link></li>
                                         <li><a href="#" className=""><FontAwesomeIcon icon={faAngleRight} /> Sitemap</a></li>
                                         <li><a href="#" className=""><FontAwesomeIcon icon={faAngleRight} /> Brands</a></li>
                                         <li><a href="#" className=""><FontAwesomeIcon icon={faAngleRight} /> Our Presence</a></li>
                                         <li><Link to="/contact-us" className=""><FontAwesomeIcon icon={faAngleRight} /> Contact Us</Link></li>
                                     </ul>
                                 </div>
-
                                 <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-sx-12 quick-links">
                                     <span className="font-weight-bold mb-2 d-block">Our Products</span>
-                                    <ul>
-                                        <li><a href="#" className=""><FontAwesomeIcon icon={faAngleRight} /> Georgette Collection</a></li>
-                                        <li><a href="#" className=""><FontAwesomeIcon icon={faAngleRight} /> Heavy Designer Collection</a></li>
-                                        <li><a href="#" className=""><FontAwesomeIcon icon={faAngleRight} /> Cotton Collection</a></li>
-                                        <li><a href="#" className=""><FontAwesomeIcon icon={faAngleRight} /> Pakistani Collection</a></li>
-                                        <li><a href="#" className=""><FontAwesomeIcon icon={faAngleRight} /> Kurti</a></li>
-                                        <li><a href="#" className=""><FontAwesomeIcon icon={faAngleRight} /> Lehenga</a></li>
-                                    </ul>
+
+                                    {
+                                        category && category.slice(0, 5).map((element, index) => {
+                                            return (
+
+
+
+                                                <ul key={index}>
+                                                    <li><NavLink to={`/suruchi-creations/products/${element._id}`} className=""><FontAwesomeIcon icon={faAngleRight} /> {element.title}</NavLink></li>
+                                                </ul>
+
+                                            )
+
+                                        })
+
+                                    }
                                 </div>
 
                                 <div className="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-sx-12 quick-links">
@@ -192,14 +229,20 @@ const Footer = () => {
                     </div>
                 </div>
             </section>
-            <button onClick={topScroll}>
-            <img src={GotoTop} id="toTop" title="Go To Top" alt="Go To Top" />
-            </button>
+
+            {
+                showButton && (
+
+                        <img src={GotoTop} id="toTop" title="Go To Top" alt="Go To Top"  onClick={topScroll}/>
+                  
+                )
+            }
+
 
             <div className="whats-app-icon ">
                 <a href="https://api.whatsapp.com/send?phone=919871051648&amp;text=Hello%20Suruchi%20Creations%2C%20would%20like%20to%20know%20more%20details%20about%20your%20products%2C%20Please%20send%20more%20details." target="_blank"><img src={whatsapp} className="blink" alt="Whatsapp" title="Whatsapp" /></a>
             </div>
-           
+
         </>
 
 

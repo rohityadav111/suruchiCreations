@@ -1,0 +1,49 @@
+.dashboard-bar {
+    width: 100%;
+    background: #ffffff;
+    padding: 13px 0;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+    margin-top: 4%;
+}
+.left {
+    font-size: 18px;
+    margin: 0px;
+    padding: 6px 0px 6px 45px;
+    font-weight: 600;
+}
+.main-section {
+    padding: 35px;
+}
+.row {
+    margin-right: -10px;
+    margin-left: -10px;
+}
+.panel-default {
+    border-color: #ddd;
+}
+
+.panel {
+    margin-bottom: 40px;
+    background-color: #fff;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+}
+.panel-default>.panel-heading {
+    color: #333;
+    border-color: #ddd;
+}
+
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 3px solid #B91251 !important;
+}
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    text-align: center;
+    color: #2f323e;
+    font-weight: 600;
+}
+.panel-body {
+    padding: 40px;
+}

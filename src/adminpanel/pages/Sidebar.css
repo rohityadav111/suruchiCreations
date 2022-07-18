@@ -1,0 +1,58 @@
+.left-section {
+    width: 20%;
+    float: left;
+    background: #ffffff;
+    padding: 35px 0px;
+    height: 100%;
+    min-height: 775px;
+    position: fixed;
+    box-shadow: 1px 0px 20px rgb(0 0 0 / 8%);
+    margin-top: 2%;
+    z-index: 1;
+}
+.Admin-Panel h3 {
+    margin: 0px;
+}
+.headn-h3 {
+    font-size: 20px;
+    color: #2f323e;
+    text-align: center;
+    font-weight: bold;
+}
+
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.nav-pills {
+    margin-top: 35px;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.nav>li>a {
+    padding: 10px 12px;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    font-size: 13px !important;
+    text-transform: uppercase;
+}
+
+.nav-pills>li>a {
+    border-radius: 4px;
+    border-bottom: 1px solid #cfcfd7;
+    padding: 8px 25px !important;
+}
+

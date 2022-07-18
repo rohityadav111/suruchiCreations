@@ -1,0 +1,36 @@
+.bordarea h3 {
+    font-size: 22px;
+    font-weight: 600;
+}
+.address_box_chktoship {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid lavender;
+}
+.address_box_chktoship h5 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    color: #403f3e;
+}
+.deliver_option ul li a {
+    background: #ce155a;
+    color: #fff !important;
+    padding: 5px 0px 5px 0;
+    display: block;
+    border-radius: 5px;
+}
+.list-inline-item a {
+    font-family: 'Source Sans Pro', sans-serif !important;
+    font-size: 16px;
+    font-weight: 500 !important;
+}
+
+.blc {
+    background-color: #2b2829!important;
+}
+.btn:hover, .button:hover {
+    background-color: #2b2829;
+    color: white !important;
+}

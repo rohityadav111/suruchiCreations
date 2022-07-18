@@ -1,0 +1,156 @@
+.dashboard-bar {
+    width: 100%;
+    background: #ffffff;
+    padding: 13px 0;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+    margin-top: 4%;
+}
+.left {
+    font-size: 18px;
+    margin: 0px;
+    padding: 6px 0px 6px 45px;
+    font-weight: 600;
+}
+.main-section {
+    padding: 35px;
+}
+.row {
+    margin-right: -10px;
+    margin-left: -10px;
+}
+.panel-default {
+    border-color: #ddd;
+}
+
+.panel {
+    margin-bottom: 40px;
+    background-color: #fff;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+}
+.panel-default>.panel-heading {
+    color: #333;
+    border-color: #ddd;
+}
+
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 3px solid #B91251 !important;
+}
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    text-align: center;
+    color: #2f323e;
+    font-weight: 600;
+}
+.panel-body {
+    padding: 15px;
+}
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+.input-style{
+     border:1px solid #d3d3d3 !important;
+     height:38.5px;
+}
+.input-group-btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+}
+.input-group .form-control, .input-group-addon, .input-group-btn {
+    display: table-cell;
+}
+
+.input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+.pull-right {
+    float: right!important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #B91251;
+    border: none;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 19px;
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+}
+.doi {
+    float: right;
+    margin-left: 15px;
+}
+.btn-default {
+    color: #333;
+    background-color: #ffffff!important;
+    border-color: #b91251!important;
+    padding: 6.5px 19px !important;
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.pull-right {
+    float: right!important;
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+table {
+    background-color: transparent;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+thead {
+    background-color: #e3e9ff !important;
+}
+@media (min-width: 768px){
+
+.col-sm-4 {
+    width: 33.33333333%;
+}
+}
+
+.col-sm-4 {
+    width: 33.33333333%;
+}

@@ -1,0 +1,153 @@
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.order-placed h6 {
+    font-size: 18px;
+    text-align: left;
+    text-transform: capitalize;
+    margin-bottom: 0px;
+    font-weight: 600;
+}
+
+.order-placed h6 span {
+    color: #ce155a;
+    margin-left: 15px;
+    font-weight: 400;
+}
+span {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+.btnmyorder {
+    text-align: end;
+    margin-top: 10px;
+}
+.wrapper {
+    display: inline-block;
+    width: 100%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+.margin-area {
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 20px;
+    z-index: -1;
+}
+
+.ft {
+    float: left;
+    margin-left: 5%;
+    margin-top: -13px;
+    display: inline-block;
+    font-size: 15px;
+}
+.dot.Confirmed {
+    left: 65px;
+    background: #28a745;
+}
+.Confirmed {
+    background: #28a745;
+    width: 4%;
+}
+.st {
+    float: left;
+    margin-left: 17%;
+    margin-top: -13px;
+    display: inline-block;
+    font-size: 15px;
+}
+.dot.Processed {
+    left: 280px;
+    background: #28a745;
+}
+.Processed {
+    left: 8%;
+    background: #28a745;
+    width: 30%;
+}
+.dot {
+    height: 20px!important;
+    width: 20px !important;
+    position: absolute;
+    background: #000;
+    border-radius: 50%;
+    top: 10px;
+    color: #fff;
+    line-height: 20px;
+    z-index: 9999;
+    font-size: 11px;
+}
+
+.tt {
+    float: left;
+    margin-left: 17%;
+    margin-top: -13px;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.dot.Shipped {
+    left: 490px;
+    background: #28a745;
+}
+.Shipped {
+    left: 8%;
+    background: #28a745;
+    width: 60%;
+}
+.ftt {
+    float: left;
+    margin-left: 17%;
+    margin-top: -13px;
+    display: inline-block;
+    font-size: 15px;
+}
+.dot.Delivered {
+    left: 700px;
+    background: #28a745;
+}
+
+.Delivered {
+    left: 8%;
+    background: #28a745;
+    width: 76%;
+}
+
+.progress-bars {
+    position: absolute;
+    height: 7px;
+    width: 25%;
+    top: 17px;
+    left: 10%;
+    background: #bbb;
+}
+
+.ordermainimg {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+.wishlistitemimg img {
+    object-fit: scale-down;
+}
+.window-will {
+    font-size: 20px;
+    line-height: 15px;
+    margin-bottom: 5px;
+    display: block;
+}
+.price {
+    font-size: 20px;
+    color: #ce155a;
+}
+.btnmyorder {
+    text-align: end;
+    margin-top: 10px;
+}

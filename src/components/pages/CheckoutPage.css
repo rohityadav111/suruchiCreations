@@ -1,0 +1,56 @@
+.left-side_shopping img {
+    width: 15%;
+}
+.pt-f {
+    font-size: 20px;
+    margin: 14px 0px;
+    color: #ce155a;
+    font-weight: 600;
+    text-align: end;
+}
+.right-side_shopping del {
+    color: #000;
+}
+.proceed-button {
+    margin: 0px auto;
+    width: 100%;
+}
+button#coupon_code {
+    color: #ce155a;
+    border: 1px solid #ce155a;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 3px 12px;
+}
+
+
+input#couponcode {
+    background: #ce155a;
+    height: 35px;
+    color: #fff;
+    font-size: 14px;
+}
+span {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.list-inline-item a {
+    font-family: 'Source Sans Pro', sans-serif !important;
+    font-size: 16px;
+    font-weight: 500 !important;
+}
+
+.proceed-button a {
+    background-color: #ce155a;
+    padding: 10px 15px;
+    width: 100%;
+    transition: 0.5s;
+}
+.text-white {
+    color: #fff!important;
+    font-size: 16px;
+    font-weight: 300;
+}

@@ -3,6 +3,8 @@ import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import SocialTags from '../pages/SocialTags'
 import { useNavigate } from 'react-router';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const Register = () => {
     let navigate = useNavigate()
@@ -15,7 +17,6 @@ const Register = () => {
      
     const submit =async(e)=>{
         e.preventDefault();
-        
         let response = await fetch ("https://web-click-api.herokuapp.com/users/signup",{
             method:"POST",
             headers:{
@@ -26,10 +27,38 @@ const Register = () => {
         })
       response = await response.json();
       console.log(response)
-      if(response.success){
-         navigate("/login")
+      if(response.success ){
+        toast.success("You have successfully registered please log in !", {
+            position: "top-center",
+            autoClose: 5000,
+        });
+        
+      }else{
+        toast.error(response.message, {
+            position: "top-center",
+            autoClose: 3000,
+        });
       }
     }
+
+    const inputs = document.querySelectorAll(".inputa");
+    function addcl(){
+      let parent = this.parentNode.parentNode;
+      parent.classList.add("focus");
+    }
+    
+    function remcl(){
+      let parent = this.parentNode.parentNode;
+      if(this.value == ""){
+        parent.classList.remove("focus");
+      }
+    }
+    
+    
+    inputs.forEach(inputa => {
+      inputa.addEventListener("focus", addcl);
+      inputa.addEventListener("blur", remcl);
+    });
     return (
         <>
         
@@ -57,19 +86,19 @@ const Register = () => {
                             <form onSubmit={submit} className="p-3 mt-4 pt-5 pb-5">
                                 <div className="row">
                                     <div className="col-md-6 create_filed">
-                                        <input type="text" name="name" placeholder=" Name *" required  value={name} onChange={e => setName(e.target.value)} className="w-100 border-0 mb-3"/>
+                                        <input type="text" name="name" placeholder=" Name *" required  value={name} onChange={e => setName(e.target.value)} className="w-100 border-0 mb-3 inputa"/>
                                     </div>
 
                                     <div className="col-md-6 create_filed">
-                                        <input type="email" name="email" placeholder=" Email *" required value={email} onChange={e => setEmail(e.target.value)} className="w-100 border-0 mb-3"/>
+                                        <input type="email" name="email" placeholder=" Email *" required value={email} onChange={e => setEmail(e.target.value)} className="w-100 border-0 mb-3 inputa"/>
                                     </div>
 
                                     <div className="col-md-6 create_filed">
-                                        <input type="text" name="phone" placeholder=" Phone *" required value={phone} onChange={e => setPhone(e.target.value)} className="w-100 border-0 mb-3"/>
+                                        <input type="text" name="phone" placeholder=" Phone *" required value={phone} onChange={e => setPhone(e.target.value)} className="w-100 border-0 mb-3 inputa"/>
                                     </div>
 
                                     <div className="col-md-6 create_filed">
-                                        <input type="text" name="password" placeholder=" Password *" required value={password} onChange={e => setPassword(e.target.value)} className="w-100 border-0 mb-3"/>
+                                        <input type="text" name="password" placeholder=" Password *" required value={password} onChange={e => setPassword(e.target.value)} className="w-100 border-0 mb-3 inputa"/>
                                     </div>
 
                                     <div className="col-md-12 create_filed text-center">
@@ -81,7 +110,7 @@ const Register = () => {
                     </div>
                 </div>
             </section>
-  
+  <ToastContainer/>
             <SocialTags/>
         </>
     )
